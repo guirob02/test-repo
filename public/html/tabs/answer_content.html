@@ -1,0 +1,130 @@
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/plugins/dataTables.min.css">
+	<link rel="stylesheet" href="css/plugins/tagsinput.min.css">
+	<link rel="stylesheet" href="css/plugins/summernote.min.css">
+	<link rel="stylesheet" href="css/plugins/summernote-bs3.min.css">
+
+	<script src="js/plugins/dataTables.min.js"></script>
+	<script src="js/plugins/tagsinput.min.js"></script>
+	<script src="js/tabs/ansTable.js"></script>
+	<script src="js/plugins/summernote.min.js"></script>
+</head>
+
+<body>
+	<div class="content bg-gray-lighter">
+		<div class="row items-push">
+			<div class="col-sm-7">
+				<h1 id="page-title" class="page-heading"></h1>
+			</div>
+
+			<div class="col-sm-5 text-right hidden-xs">
+				<ol class="breadcrumb push-10-t">
+					<li>Manage Answers</li>
+					<li id="ariane-title"></li>
+				</ol>
+			</div>
+		</div>
+	</div>
+
+	<div class="content">
+		<div class="block push-20-t" id="AnsCont">
+			<div class="block-content">
+				<table class="table table-striped js-dataTable-full">
+					<thead>
+						<tr>
+							<th style="width: 10%">ID</th>
+							<th style="width: 25%">Answer Description</th>
+							<th style="width: 44%">Text Response</th>
+							<th style="width: 10%">Tags</th>
+							<th class="text-center hidden-xs" style="width: 11%">Actions</th>
+						</tr>
+					</thead>
+					<tbody id="ansTbody">
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade answer-modal" id="modal-popout" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+		<div class="modal-dialog modal-dialog-popout">
+			<div class="modal-content">
+				<div class="block block-themed block-transparent remove-margin-b">
+					<div class="block-header bg-primary-dark">
+						<ul class="block-options">
+							<li>
+								<button data-dismiss="modal" type="button"><i class="si si-close"></i></button>
+							</li>
+						</ul>
+						<h3 class="block-title">Edit Answer Content</h3>
+						<p style="display:none" id="lastUpdate"></p>
+					</div>
+
+					<div class="block-content">
+						<div class="form-group">
+							<label for="ans_code">Answer Code:</label>
+							<input class="form-control" type="text" id="ansID" name="ans_code" readonly="readonly">
+						</div>
+
+						<div class="form-group">
+							<label for="ans_desc">Description:</label>
+							<input class="form-control" type="text" id="ansDesc" name="ans_desc" placeholder="Please write a short description for this answer.."
+							    readonly="readonly">
+						</div>
+
+						<div class="form-group">
+							<label for="ans_txt">Text Response: <span id="text-empty-error" hidden>Answer text cannot be blank</span></label>
+							<!-- Tabs -->
+							<ul class="nav nav-pills bs-tabdrop" data-toggle="tabs">
+								<li id="add-tab"><a href="#bs-tabdrop-tab">+</a></li>
+							</ul>
+							<div class="block-content tab-content text-responses">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="ans_txt">Import Document:</label>
+							<div class="content-upload2">
+								<form class="upload-form" id="fileupload" method='POST' , enctype='multipart/form-data'>
+									<div class="upload--container dropzone">
+										<div class="upload--description">
+											You can drag and drop your file to this area as well.<br>Files support is currently limited to PDF.
+										</div>
+										<div class="upload--file-chooser base--label">
+											<label for="file-chooser-input" class="upload--file-chooser-btn base--button">Choose your file</label>
+											<div id="myProgress">
+												<div id="myBar"></div>
+											</div>
+											<span class="upload--file-chooser-name"></span>
+											<input id="file-chooser-input" class="upload--file-chooser-input base--file-input" type="file" , accept="application/pdf, application/msword, application/vnd.ms-powerpoint, application/vnd.openxmlformats-officedocument.wordprocessingml.document, .html"
+											    title="Choose a file to upload" name="document">
+										</div>
+										<button id="deleteAttachment" class="btn btn-sm btn-primary" type="button" style="display:block">Delete the attachment</button>
+									</div>
+								</form>
+							</div>
+							<label class="docinfo">Description:</label>
+							<textarea class="form-control" id="file_descr" name="descr" placeholder="Please write a short description for this document.."></textarea>
+						</div>
+
+						<div id="url-form-group" class="form-group">
+							<label for="ans_url">Answer URL:</label>
+							<input class="form-control" type="text" id="ansUrl" name="ans_url" placeholder="Please enter the answer's url..">
+						</div>
+
+						<div class="form-group">
+							<label for="custom_tags">Answer tags:</label>
+							<input class="js-tags-input form-control" type="text" id="ansTags" value="" name="custom_tags">
+						</div>
+					</div>
+				</div>
+
+				<div class="modal-footer">
+					<button class="btn btn-sm btn-default" type="button" data-dismiss="modal">Close</button>
+					<button class="btn btn-sm btn-primary" type="button" data-dismiss="modal" id="submitAnsEdit"><i class="fa fa-check"></i> Submit</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>

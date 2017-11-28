@@ -1,0 +1,221 @@
+body.page-signin {
+    background: #666 url(../img/background/bg1.jpg) no-repeat fixed;
+    background-size: cover;
+}
+
+.bg-white-transparent {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.rounded-1x {
+    border-radius: 7px;
+}
+
+.mar-r1x {
+    margin-right: 3px
+}
+
+.center {
+    text-align: center;
+}
+
+.pad-intents {
+    padding: 230px 0 0 230px;
+}
+
+.pad-answers {
+    padding: 150px 0 0 230px;
+}
+
+.sub-btn {
+    text-align: center;
+    margin: 30px 0 20px 0;
+}
+
+.edit-container {
+    display: none;
+    z-index: 3;
+    background: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.edit-section {
+    background-color: #ffffff;
+    border: 1px solid #f0f0f0;
+    border-radius: 7px;
+    margin: 0 130px;
+}
+
+.error-container {
+    display: none;
+    position: absolute;
+    top: 6px;
+    left: 0;
+    z-index: 1050;
+    width: 100%;
+    padding: 0 20%;
+}
+#text-empty-error {
+    color: red;
+}
+#trainDiscovery {
+    font-size: 1.8rem;
+    padding: 1.2rem;
+    font-variant: small-caps;
+}
+
+.elem-texts p {
+    margin-bottom: 0;
+}
+
+.block.content {
+    text-align: center;
+}
+
+.logo {
+    width: 200px;
+    margin-bottom: 20px;
+    height: 80px;
+}
+
+.wrongCreds {
+    display: none;
+}
+
+.wrongCredsShow {
+    display: block;
+    color: rgb(183, 26, 26);
+    font-size: 12px;
+    text-align: center;
+}
+
+
+/*File upload formating*/
+
+.content-upload {
+    margin: 10px 10px 0 10px;
+}
+
+.upload-description {
+    margin: 13px 0;
+    font-size: 12px;
+}
+
+.upload-file-chooser-btn {
+    color: #5a5a5a;
+    border: .15em solid #c7c7c7;
+    cursor: pointer;
+    text-align: center;
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+.upload-file-chooser-btn:hover {
+    border: .15em solid #5c90d2;
+    color: #5c90d2;
+}
+
+input[type=file] {
+    -webkit-appearance: button;
+    cursor: pointer;
+    display: none;
+}
+
+
+/* File upload funtion */
+
+.content-upload2 {
+    width: 90%;
+    margin: auto;
+}
+
+.docinfo {
+    line-height: 10px;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.upload--container {
+    padding: 1rem;
+    text-align: center;
+    text-align: -webkit-center;
+    text-align: -moz-center;
+    color: #5a5a5a;
+    cursor: pointer;
+    border-right: .2em solid #c7c7c7;
+    border-left: .2em solid #c7c7c7;
+    border-bottom: .1em dashed #c7c7c7;
+    border-top: .1em dashed #c7c7c7;
+}
+
+.upload--container:hover {
+    border-right: .2em solid #2E93AD;
+    border-left: .2em solid #2E93AD;
+    border-bottom: .1em dashed #2E93AD;
+    border-top: .1em dashed #2E93AD;
+}
+
+.upload--file-chooser-btn {
+    color: #5a5a5a;
+    border: .15em solid #c7c7c7;
+    cursor: pointer;
+    width: 12rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.upload--file-chooser-btn:hover {
+    border: .15em solid #288CA0;
+    background-color: #2E93AD;
+    color: #FFFFFF;
+}
+
+#myProgress {
+    width: 90%;
+    background: #ddd;
+    margin-bottom: 15px;
+}
+
+#myBar {
+    width: 0%;
+    height: 20px;
+    background-color: #337ab7;
+    text-align: center;
+    /* To center it horizontally (if you want) */
+    line-height: 20px;
+    /* To center it vertically */
+    color: white;
+}
+
+table.fixed {
+    table-layout: fixed;
+}
+
+table.fixed td {
+    overflow: hidden;
+}
+
+table.fixed td:hover {
+    overflow: overlay;
+}
+
+.text-responses {
+    overflow: visible !important;
+}
+
+.white-space {
+    white-space: normal;
+}

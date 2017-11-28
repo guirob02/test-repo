@@ -1,0 +1,45 @@
+<head>		
+    <meta charset="utf-8">
+	<link rel="stylesheet" id="css-main" href="css/plugins/dataTables.min.css">	    
+	<link rel="stylesheet" id="css-main" href="css/plugins/tagsinput.min.css">	    
+	<script src="js/tabs/entitiesTable.js"></script>
+</head>
+
+<body>
+	<div class="content bg-gray-lighter">
+		<div class="row items-push">
+			<div class="col-sm-7">
+				<h1 class="page-heading">Display Entities <small> Simple access to your entities values</small></h1>
+			</div>
+			
+			<div class="col-sm-5 text-right hidden-xs">
+				<ol class="breadcrumb push-10-t">
+					<li>Entities</li>
+					<li><a class="link-effect" href="#" data-toggle="nav-tabs" id="display_entities">Display Entities</a></li>
+				</ol>
+			</div>
+		</div>
+	</div>
+	
+	<div class="content content-boxed">
+	    <div class="block push-20-t" id="entitiesCont">
+	        <div class="block-header">
+	            <div class="block-options">
+	                <code>Read Only</code>
+	            </div>
+	            <h3 class="block-title">Conversation Entities & Values</h3>
+	        </div>
+	        <div class="block-content">
+	            <table class="js-table-sections table table-hover" id="entitiesTable">
+	                <thead>
+	                    <tr>
+	                        <th style="width: 30px;"></th>
+	                        <th>Entity Name</th>
+	                        <th style="width: 15%;">Amount</th>
+	                    </tr>
+	                </thead>
+	            </table>
+	        </div>
+	    </div>
+	</div>
+</body>

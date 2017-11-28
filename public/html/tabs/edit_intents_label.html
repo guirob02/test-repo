@@ -1,0 +1,85 @@
+<head>
+    <meta charset="utf-8">
+	<link rel="stylesheet" id="css-main" href="css/plugins/dataTables.min.css">	    
+	<link rel="stylesheet" id="css-main" href="css/plugins/tagsinput.min.css">	   
+	<script src="js/plugins/dataTables.min.js"></script>       
+	<script src="js/plugins/tagsinput.min.js"></script>    
+	<script src="js/tabs/intentTable.js"></script>  
+</head>
+
+<body>        
+	<div class="content bg-gray-lighter">
+		<div class="row items-push">
+			<div class="col-sm-7">
+				<h1 class="page-heading">Edit Intents Labels <small> Simple editing for your Conversation's intents labels</small></h1>
+			</div>
+			
+			<div class="col-sm-5 text-right hidden-xs">
+				<ol class="breadcrumb push-10-t">
+					<li>Intents</li>
+					<li><a class="link-effect" href="#" data-toggle="nav-tabs" id="edit_intents_label">Edit Labels</a></li>
+				</ol>
+			</div>
+		</div>
+	</div>
+
+	<div class="content">
+	    <div class="block push-20-t" id="intentCont">
+	        <div class="block-content">
+				<table class="table table-striped js-dataTable-full">
+				  <thead>
+				      <tr>
+				          <th class="text-center" style="width: 5%">Id</th>
+				          <th>Code Name</th>
+				          <th>Custom Name</th>
+				          <th>Tags</th>
+				          <th class="text-center hidden-xs" style="width: 5%">Actions</th>
+				        </tr>
+				    </thead>
+				    <tbody id="intTbody">
+				    </tbody>
+				</table>				
+	        </div>
+	    </div>
+	</div>	
+	
+	<div class="modal fade" id="modal-popout" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+	    <div class="modal-dialog modal-dialog-popout">
+	        <div class="modal-content">
+	            <div class="block block-themed block-transparent remove-margin-b">
+	                <div class="block-header bg-primary-dark">
+	                    <ul class="block-options">
+	                        <li>
+	                            <button data-dismiss="modal" type="button"><i class="si si-close"></i></button>
+	                        </li>
+	                    </ul>
+	                    <h3 class="block-title">Edit Intent Label</h3>
+                		<p style="display:none" id="intID"></p>
+	                </div>
+	                
+            		<div class="block-content">
+					    <div class="form-group">
+					        <label for="intent_name">Intent Name:</label>
+					        <input class="form-control" type="text"  id="intName" name="intent_name" readonly="readonly">
+					    </div>
+			            
+					    <div class="form-group">
+					        <label for="custom_name">Custom Name:</label>
+					        <input class="form-control" type="text" id="cuName" name="custom_name" placeholder="Please write a custom name for this intent..">
+					    </div>
+					    
+					    <div class="form-group">
+					        <label for="custom_tags">Intent tags:</label>
+					        <input class="js-tags-input form-control" type="text" id="cuTags" value="" name="custom_tags">
+					    </div>           		
+            		</div>
+	            </div>
+	            
+	            <div class="modal-footer">
+	                <button class="btn btn-sm btn-default" type="button" data-dismiss="modal">Close</button>
+	                <button class="btn btn-sm btn-primary" type="button" data-dismiss="modal" id="submitIntEdit"><i class="fa fa-check"></i> Submit</button>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+</body>

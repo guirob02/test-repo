@@ -1,0 +1,125 @@
+<head>
+  <script src="js/upload.js"></script>
+  <script src="js/tabs/dashboard.js"></script>
+  <script src="js/plugins/csvExport.min.js"></script>
+</head>
+
+<body>
+  <div class="content overflow-hidden">
+    <div class="push-20-t push-15">
+      <h1 class="h2 zoomIn">Answer Store</h1>
+      <h2 class="h5 zoomIn">A one stop-shop to manage your Chat-Bot answers.</h2>
+    </div>
+  </div>
+
+  <div class="block content bg-white border-b" id="dashStats">
+    <div class="row items-push text-uppercase">
+      <div class="col-xs-6 col-sm-2-1">
+        <div class="font-w700 text-gray-darker animated fadeIn">Intents Volume</div>
+        <div class="text-muted animated fadeIn"><small><i class="si si-notebook"></i> Elements Amount</small></div>
+        <a class="h2 font-w300 text-primary animated flipInX" href="#" id="intentsNb" title="Open Intents Tab" onclick="Animation.loadContainer('edit_intents_label')">-</a>
+      </div>
+      <div class="col-xs-6 col-sm-2-1">
+        <div class="font-w700 text-gray-darker animated fadeIn">Entities Volume</div>
+        <div class="text-muted animated fadeIn"><small><i class="si si-notebook"></i> Elements Amount</small></div>
+        <a class="h2 font-w300 text-primary animated flipInX" href="#" id="entitiesNb" title="Open Entities Tab" onclick="Animation.loadContainer('display_entities')">-</a>
+      </div>
+      <div class="col-xs-6 col-sm-2-1">
+        <div class="font-w700 text-gray-darker animated fadeIn">Answers Volume</div>
+        <div class="text-muted animated fadeIn"><small><i class="si si-notebook"></i> Elements Amount</small></div>
+        <a class="h2 font-w300 text-primary animated flipInX" href="#" id="answersNb" title="Open Content Edition Tab" onclick="Animation.loadContainer('answer_content', 'edit')">-</a>
+      </div>
+      <div class="col-xs-6 col-sm-2-1">
+        <div class="font-w700 text-gray-darker animated fadeIn">Missing Answers</div>
+        <div class="text-muted animated fadeIn"><small><i class="si si-notebook"></i> Elements Amount</small></div>
+        <a class="h2 font-w300 text-primary animated flipInX" href="#" id="missingAnsNb" title="Open Missing Content Tab" onclick="Animation.loadContainer('answer_content', 'add')">-</a>
+      </div>
+      <div class="col-xs-6 col-sm-2-1">
+        <div class="font-w700 text-gray-darker animated fadeIn">Orphan Content</div>
+        <div class="text-muted animated fadeIn"><small><i class="si si-notebook"></i> Elements Amount</small></div>
+        <a class="h2 font-w300 text-primary animated flipInX" href="#" id="orphanAnsNb"  title="Open Orphan Content Tab" onclick="Animation.loadContainer('answer_content', 'orphan')">-</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="content push-20-t">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="block block-bordered" id="uploadInt">
+          <div class="block-header">
+            <h3 class="block-title">Intents Center</h3>
+          </div>
+          <div class="block-content">
+            <div class="pull-r-l pull-t push">
+              <table class="block-table text-center bg-gray-lighter border-b">
+                <tbody>
+                  <tr>
+                    <td style="width: 100%;">
+                      <div class="content-upload" id="intUpload">
+                        <div class="upload-container dropzone">
+                          <p class="upload-description">Select or drag a CSV file with the appropiate formatting :</br>intent_uid;intent;tags;displayed_text</p>
+                          <div class="upload--file-chooser base--label">
+                            <label for="intChooserInput" class="upload-file-chooser-btn base--button">Choose Your File</label>
+                            <input id="intChooserInput" class="upload-file-chooser-input base-file-input" type="file", accept=".csv" title="Choose a file to upload" name="document">
+                          </div>
+                          <span id="intFileName"></span>
+                          <span id="inputFilePercentage"></span>
+                          <p class="upload-description">Important: Save the CSV file using UTF-8 encoding.</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="list-group center">
+              <button class="btn btn-sm btn-primary" type="button" id="exportInt"><i class="fa fa-download"></i>  Export</button>
+              <button class="btn btn-sm btn-primary" type="button" id="importInt"><i class="fa fa-upload"></i>  Import</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="block block-bordered" id="uploadAns">
+          <div class="block-header">
+            <!-- ul class="block-options">
+              <li>
+                <button type="button" data-toggle="block-option" data-action="refresh_toggle" data-action-mode="demo"><i class="si si-refresh"></i></button>
+              </li>
+            </ul -->
+            <h3 class="block-title">Answers Center</h3>
+          </div>
+          <div class="block-content">
+            <div class="pull-r-l pull-t push">
+              <table class="block-table text-center bg-gray-lighter border-b">
+                <tbody>
+                  <tr>
+                    <td style="width: 100%;">
+                      <div class="content-upload" id="ansUpload">
+                        <div class="upload-container dropzone">
+                          <p class="upload-description">Select or drag a CSV file with the appropiate formatting :</br>answer_uid;text;url;tags</p>
+                          <div class="upload--file-chooser base--label">
+                            <label for="ansChooserInput" class="upload-file-chooser-btn base--button">Choose Your File</label>
+                            <input id="ansChooserInput" class="upload-file-chooser-input base-file-input" type="file", accept=".csv" title="Choose a file to upload" name="document">
+                          </div>
+                          <span id="ansFileName"></span>
+                          <span id="inputFilePercentage"></span>
+                          <p class="upload-description">Important: Save the CSV file using UTF-8 encoding.</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="list-group center">
+              <button class="btn btn-sm btn-primary" type="button" id="exportAns"><i class="fa fa-download"></i>  Export</button>
+              <button class="btn btn-sm btn-primary" type="button" id="importAns"><i class="fa fa-upload"></i>  Import</button>
+              <button class="btn btn-sm btn-danger" type="button" id="replicateDocs"><i class="si si-refresh"></i>  Migrate documents from DEV to DEMO</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
